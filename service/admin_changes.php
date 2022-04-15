@@ -4,19 +4,43 @@ $username="root";
 $password="";
 $dbname="ServiceOnline";
 
-
+$chose="a";
 $conn= mysqli_connect($servername,$username,$password,$dbname);
+if (isset($_POST['ap'])) {
+    $chose="Aprobat";
+}
+elseif (isset($_POST['res'])) {
+    $chose="Respins";
+}
+
+$id=$_POST["id"];
+$mesaj=$_POST["mesaj"];
+$page = file_get_contents("edit_clear.html");
+echo $page;
+if(strcmp($mesaj,"In asteptare")!==0){
+$update1="UPDATE cereri SET Raspuns='$mesaj' WHERE ID='$id';";
+$query1=mysqli_query($conn,$update1);
+
+$update2="UPDATE cereri SET StatusCerere='$chose' WHERE ID='$id';";
+$query1=mysqli_query($conn,$update2);
+
+
+
+
+ 
+}
+else
+{
+    echo "<script>alert('Introduceti raspunsul')</script>";
+}
 $select="SELECT * from cereri where StatusCerere='In asteptare'";
 $query = mysqli_query($conn,$select);
 
-
-
-   
+  
 $count=mysqli_num_rows($query);
-$page = file_get_contents("edit_clear.html");
-echo $page;
  
-$tabel="<table border=1 style='width:100%; table-layout: fixed;overflow-x:auto;'>";
+ 
+$tabel="<table border=1 style='width:100%; table-layout: fixed; overflow-x:auto;'>";
 $tabel.="<tr style='background-color:black; color:white;'><td align=center>Cerere</td>";
 $tabel.="<td align=center  >ID</td>";
 $tabel.="<td align=center >Data dorita</td>";

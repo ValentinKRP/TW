@@ -50,10 +50,37 @@ $query = mysqli_query($conn,$select);
 
    
  $count=mysqli_num_rows($query);
-  
- $count=$count+1;
+ 
+ $select2="SELECT * from programari";
+ $query2 = mysqli_query($conn,$select2);
+ 
+ 
+ 
+    
+ $ok=0;
+if(mysqli_num_rows($query2) > 0)
+{
+    
+   
+    while($row = mysqli_fetch_assoc($query2))
+    {    
+       
+       if($row["OraProgramarii"]==$time && $row["DataProgramarii"]==$date)
+           {$page = file_get_contents("programare.html");
+            echo $page;
+              echo "<script>alert('Ora rezervata')</script>";
+              return;
+           }
+   }
+    
+}
+ 
+ 
+
+
+$count=$count+1;
 $id_max=0;
-$ok=0;
+ 
 if(mysqli_num_rows($query) > 0)
 {
     
@@ -72,9 +99,9 @@ $id_max=$id_max+1;
      
 
     $insert="INSERT INTO cereri(ID, TextUtilizator, StatusCerere, DataDorita,OraDorita, IdCont,Raspuns) VALUES ('$id_max','$cerere','$stat','$date','$time','$id','$raspuns')";
-    
+    $insert2="INSERT INTO programari(ID,DataProgramarii,OraProgramarii,IdUser) VALUES ('$id_max','$date','$time','$id')";
     $query2=mysqli_query($conn,$insert);
-      
+    $query3=mysqli_query($conn,$insert2);
     mysqli_close($conn);
    $page = file_get_contents("programare.html");
    echo $page;

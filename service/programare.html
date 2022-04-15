@@ -43,15 +43,16 @@
 		 <label>Data dorita:</label><input type="date" id="txtDate" name="txtDate">
 		 <br>
      <br>
-		 <label>Ora dorita:</label><input type="time" id="time" name="time">
+		 <label>Ora dorita:</label><input type="time" id="time" step="3600" name="time">
      <br>
      <input id="id_user" name="id_user">
+     <br>
+     <label>Imagine: </label><input type="file" id="myFile" name="filename">
 		  <p id="iflogged"></p>
 		</div>
 	 </form> 
 	  
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
- 
+  
 	  
 	       <script>$(function(){
     var dtToday = new Date();
@@ -70,7 +71,7 @@
     $('#txtDate').attr('min', maxDate);
 });
 </script>
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+ 
  <script>
 
  var x = localStorage.getItem("id");
@@ -80,6 +81,18 @@
 
  
  </script>
+ <script>
+   const picker = document.getElementById('txtDate');
+picker.addEventListener('input', function(e){
+  var day = new Date(this.value).getUTCDay();
+  if([6,0].includes(day)){
+    e.preventDefault();
+    this.value = '';
+    alert('In weekend nu este deschis');
+  }
+});
+ </script>
+
  
  <script src="functii.js"></script>  
     

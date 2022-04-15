@@ -24,8 +24,9 @@ mysqli_close($conn);
 $page = file_get_contents("edit_clear.html");
 echo $page;
 
-$tabel="<table border=1 style='width:100%;'>";
+$tabel="<table border=1 style='width:100%;overflow-x:auto;'>";
 $tabel.="<tr style='background-color:black; color:white;'><td align=center>Status</td>";
+$tabel.="<td align=center >Cerere</td>";
 $tabel.="<td align=center >Raspuns</td>";
  
 $tabel.="</tr>";
@@ -38,7 +39,7 @@ if(mysqli_num_rows($query) > 0)
    while($row = mysqli_fetch_assoc($query))
    {    
         
-    $tabel.="<tr style='background-color:gray'><td align=center>".$row["StatusCerere"]."</td><td align=center>".$row["Raspuns"]."</td>";
+    $tabel.="<tr style='background-color:gray'><td align=center>".$row["StatusCerere"]."</td><td align=center>".$row["TextUtilizator"]."</td><td align=center>".$row["Raspuns"]."</td>";
    
   }
   $tabel.="</table>";

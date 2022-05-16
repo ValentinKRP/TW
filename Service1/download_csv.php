@@ -13,7 +13,7 @@ $query = mysqli_query($conn,$select);
 
 $count=mysqli_num_rows($query);
 $delimiter = ","; 
-$filename = "users_" . date('Y-m-d') . ".csv"; 
+$filename = "users_" . date('Ymd') . ".csv"; 
      
     // Create a file pointer 
 $f = fopen('php://memory', 'w'); 

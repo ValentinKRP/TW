@@ -6,14 +6,12 @@ $username="root";
 $password="";
 $dbname="ServiceOnline";
 
-$chose="a";
 $conn= mysqli_connect($servername,$username,$password,$dbname);
 
 $select="SELECT * from piese";
 $query = mysqli_query($conn,$select);
 
-  
-$count=mysqli_num_rows($query);
+
 $form='<form method="post" action="furnizor.php">';
  
     

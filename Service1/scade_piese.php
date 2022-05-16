@@ -16,13 +16,16 @@ if(mysqli_num_rows($query) > 0)
    
     while($row = mysqli_fetch_assoc($query))
     {    
-        
+        if($row['Numar'] > 0){
             $sum=(int)$row["Numar"]-$cantitate;
+            $update="UPDATE piese SET Numar=$sum where NumePiesa='$tip'";
+            $query2 = mysqli_query($conn,$update);
+        }
+        else
+            echo "<script>alert('Nu exista stoc pentru aceasta piesa!');</script>";
    }
     
 }
-$update="UPDATE piese SET Numar=$sum where NumePiesa='$tip'";
-$query2 = mysqli_query($conn,$update);
 
 
 $select="SELECT * from piese";

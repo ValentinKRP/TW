@@ -38,13 +38,10 @@ include "header.php";
 
 <?php
 
+include_once("db/connection.php");
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ServiceOnline";
+$conn = OpenCon();
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
 mysqli_close($conn);
 
 $tabel = "<table class='bodyp' border=1 style='width:100%;overflow-x:auto;'><tbody id='tbody-header'>";

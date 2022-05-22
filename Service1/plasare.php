@@ -14,13 +14,10 @@ function clean($string)
    return preg_replace('/-+/', '-', $string);
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ServiceOnline";
+include_once("db/connection.php");
 
+$conn = OpenCon();
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 $id = $_POST['id_user'];
 

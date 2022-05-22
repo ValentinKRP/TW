@@ -6,17 +6,17 @@ function clean($string)
 
     return preg_replace('/-+/', '-', $string);
 }
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ServiceOnline";
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id_user'])) {
 
     $id = $_GET['id_user'];
     $id = clean($id);
 
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    include_once("db/connection.php");
+
+    $conn = OpenCon();
+
 
     if (isset($_GET['no_rows']) && $_GET['no_rows'] != 'all') {
         $startRows = ($_GET['no_rows'] - 1) * 5;

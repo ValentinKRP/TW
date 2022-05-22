@@ -1,11 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ServiceOnline";
+
+include_once("db/connection.php");
 
 $chose = "a";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = OpenCon();
+
 if (isset($_POST['ap'])) {
     $chose = "Aprobat";
 } elseif (isset($_POST['res'])) {

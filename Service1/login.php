@@ -1,12 +1,8 @@
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ServiceOnline";
+include_once("db/connection.php");
 
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = OpenCon();
 
 $email = $_POST["email"];
 

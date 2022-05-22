@@ -3,14 +3,13 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     session_start();
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ServiceOnline";
+
 $tip = $_POST["tip"];
 $cantitate = $_POST["cantitate"];
+include_once("db/connection.php");
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = OpenCon();
+
 $select = "SELECT * from piese where NumePiesa='$tip'";
 $query = mysqli_query($conn, $select);
 $sum = 0;

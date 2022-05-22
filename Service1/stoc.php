@@ -20,14 +20,10 @@ include "header.php";
    </h3>
 
    <?php
+   include_once("db/connection.php");
 
-   $servername = "localhost";
-   $username = "root";
-   $password = "";
-   $dbname = "ServiceOnline";
+   $conn = OpenCon();
 
-
-   $conn = mysqli_connect($servername, $username, $password, $dbname);
    $select = "SELECT * from piese";
    $query = mysqli_query($conn, $select);
 

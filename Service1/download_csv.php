@@ -1,11 +1,8 @@
 <?php
-$servername = "localhost";
-$username="root";
-$password="";
-$dbname="ServiceOnline";
+include_once("db/connection.php");
 
+$conn = OpenCon();
 
-$conn= mysqli_connect($servername,$username,$password,$dbname);
 $select="SELECT * from conturi";
 $query = mysqli_query($conn,$select);
 

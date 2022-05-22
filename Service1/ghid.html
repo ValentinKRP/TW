@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="utf-8">
+    <title>Ghid de utilizare</title>
+</head>
+
+<body>
+    <article>
+        <header>
+            <h1> Cycling Maintenance Web Too </h1>
+        </header>
+        <div role="contentinfo">
+            <section typeof="sa:AuthorsList">
+                <h2> Autori </h2>
+                <ul>
+                    <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Valentin">
+                            <meta property="schema:additionalName" content="Dumitru">
+                            <meta property="schema:familyName" content="Carp">
+                            <span property="schema:name"> Carp Dumitru Valentin </span>
+                        </span>
+                        <ul>
+                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                                <a href="mailto:valentin.carp15@gmail.com"
+                                    property="schema:email">valentin.carp15@gmail.com</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Robert">
+                            <meta property="schema:additionalName" content="Marian">
+                            <meta property="schema:familyName" content="Florea">
+                            <span property="schema:name"> Florea Robert Marian </span>
+                        </span>
+                        <ul>
+                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                                <a href="mailto:robert.florea980@gmail.com"
+                                    property="schema:email">robert.florea980@gmail.com</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Maria">
+                            <meta property="schema:additionalName" content="Georgiana">
+                            <meta property="schema:familyName" content="Hilote">
+                            <span property="schema:name"> Hilote Maria Georgiana </span>
+                        </span>
+                        <ul>
+                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                                <a href="mailto:hilotemaria@gmail.com" property="schema:email">hilotemaria@gmail.com</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section typeof="sa:Affiliations">
+                <h2>Afiliere</h2>
+                <ul>
+                    <li id="sa">
+                        <span typeof="schema:Organization" resource="https://uaic.ro/">
+                            <span property="schema:name">uaic.ro</span>,
+                            <span property="schema:parentOrganization">
+                                <span typeof="schema:Organization">
+                                    <span property="schema:name">Alexandru Ioan Cuza University</span>
+                                    —
+                                    <span property="schema:location" typeof="schema:Place">
+                                        <span property="schema:address" typeof="schema:PostalAddress">
+                                            <span property="schema:addressLocality">Iasi</span>,
+                                            <span property="schema:addressRegion">Iasi</span>,
+                                            <span property="schema:addressCountry">Romania</span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+
+        <section>
+            <h1>Tabel de continut</h1>
+            <ul>
+                <li>
+                    <a href="#introduction"> 1. Introducere </a>
+                    <ul>
+                        <li> <a href="#generaldescription"> 1.1 Descriere Generala </a> </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#user"> 2. Utilizator </a>
+                    <ul>
+                        <li> <a href="#login"> 2.1 Autentificare/Inregistrare </a> </li>
+                        <li> <a href="#programare"> 2.2 Programare </a> </li>
+                        <li> <a href="#cereri"> 2.3 Vizualizare cereri</a> </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#administrator"> 3. Administrator </a>
+                    <ul>
+                        <li> <a href="#logina"> 3.1 Logare </a> </li>
+                        <li> <a href="#administration"> 3.2 Administrare </a> </li>
+                        <li> <a href="#programari"> 3.3 Vizualizare programari </a> </li>
+                        <li> <a href="#stoc"> 3.4 Stoc </a> </li>
+                        <li> <a href="#piesa"> 3.5 Adauga piese </a> </li>
+                        <li> <a href="#piesafolosita"> 3.6 Foloseste piese </a> </li>
+                        <li> <a href="#comenzi"> 3.7 Comenzi </a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h1 id="utilizator"> 1. Introducere </h1>
+            <section>
+                <h2 id="generaldescription"> 1.1 Descriere Generala </h2>
+                <p>
+                    Cycling Maintenance Web Tool este un tool care permite utilizatorului sa se programeze pentru o reparatie.
+                    Administratorul va putea aproba sau respinge cererea in functie de problema si stocul disponibil,
+                    adaugand si un mesaj explicativ.
+                </p>
+            </section>
+
+        </section>
+
+
+
+        <section>
+            <h1 id="user"> 2. Utilizator </h1>
+            <section>
+                <h2 id="login"> 2.1 Logare/Inregstrare </h2>
+                <p>
+                    Utilizatorii se pot inregistra pentru a putea trimite o programare.
+                    In cazul in care au un cont, se pot autentifica direct apasand butonul "Logare".
+                </p>
+            </section>
+            <section>
+                <h2 id="programare"> 2.2 Programare </h2>
+                <p>
+                    Utilizatorii , dupa autentificare pot crea o cerere completand un formular prin care descrie problema si si selectand ora dorita.Va fi atentionat daca ora dorita este disponibila.
+                </p>
+            </section>
+            <section>
+                <h2 id="cereri"> 2.3 Cereri </h2>
+                <p>
+                   Utilizatorii pot vizualiza propriile cereri,
+                   pentru a vedea statusul cererii.
+                </p>
+            </section>
+
+        </section>
+
+
+        <section>
+            <h1 id="administrator"> 3. Administrator </h1>
+            <section>
+                <h2 id="logina"> 3.1 Logare </h2>
+                <p>
+                    Adminii introduc la logare datele specifice pentru a accesa panoul de administrare.
+                </p>
+            </section>
+            <section>
+                <h2 id="administration"> 3.2 Administrare </h2>
+                <p>
+                    Adminii pot vizualiza cererile, oferind acceptand sau refuzan cererea si oferind un raspuns.
+                    De asemenea pot consulta stocul si sa actualizeze de fiecare data cand utilizeaza anumite piese.
+                    In cazul in care raman fara piese pe stoc pot crea o cerere catre un furnizor.
+                </p>
+            </section>
+            <section>
+                <h2 id="programari"> 3.3 Vizualizare programari </h2>
+                <p>
+                   Progaramarile  utilizatorilor pot fi vizualizate prin butonul " Vizualizare programari".
+                   Tot aici se pot vedea detalii si oferi un raspuns pentru fiecare cerere.
+                </p>
+            </section>
+            <section>
+                <h2 id="stoc"> 3.4 Stoc </h2>
+                <p>
+                    Administatorul poate vedea stocul curent accesand butonul Stoc.
+                </p>
+            </section>
+            <section>
+                <h2 id="piesa"> 3.5 Adauga piesa </h2>
+                <p>
+                    Adaugarea unei piese se face prin apasarea butonului "Adauga piesa".
+                    Pe pagina deschisa, se introduce numele piesei ce va aparea in stoc.
+                </p>
+            </section>
+            <section>
+                <h2 id="piesafolosita"> 3.6 Foloseste piese </h2>
+                <p>
+                    Folosirea unei piese se face prin apasarea butonului "Piese folosite".
+                    Aici administratorului va selecta piesa pe care crede ca o foloseste si numarul de bucati pentu aceasta.
+
+                </p>
+            </section>
+            <section>
+                <h2 id="comenzi"> 3.7 Comenzi </h2>
+                <p>
+                    Administratorul poate oricand actualizare stocul prin cereri catre un furnizor
+                    apasand butonul "Cerere furnizor".
+                    Pe pagina aceasta va alege tipul produsului , numele funizorului si cantitatea pe care o doreste sa o achizitioneza.
+                    De asemenea se pot vedea istoricul cererilor prin butonul "Cereri furnizori".
+                    
+                </p>
+            </section>
+
+        </section>
+
+
+</body>
+
+</html>

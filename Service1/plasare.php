@@ -2,6 +2,10 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
+   session_start();
+}
+
 function clean($string)
 {
    $string = str_replace(' ', '-', $string);
@@ -9,6 +13,7 @@ function clean($string)
 
    return preg_replace('/-+/', '-', $string);
 }
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -17,28 +22,25 @@ $dbname = "ServiceOnline";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-
-
 $id = $_POST['id_user'];
-
 
 
 if (isset($_FILES['filename'])) {
    $imagename = $_FILES["filename"]["name"];
    $check = mime_content_type($_FILES["filename"]["tmp_name"]);
 
-   if ($check != 'image/png' && $check != 'image/jpg') {
-      $page = file_get_contents("programare.html");
-      echo $page;
-      echo "<script>alert('Format fisier gresit');</script>";
-      return;
-   }
+   // if ($check != 'image/png' && $check != 'image/jpg') {
+   //    $page = file_get_contents("programare.html");
+   //    echo $page;
+   //    echo "<script>alert('Format fisier gresit');</script>";
+   //    return;
+   // }
 
-   $target_dir = "uploads/" . trim($id, "\"");
+   // $target_dir = "uploads/" . trim($id, "\"");
 
-   if (!file_exists($target_dir)) {
-      mkdir($target_dir, 0777, true);
-   }
+   // if (!file_exists($target_dir)) {
+   //    mkdir($target_dir, 0777, true);
+   // }
 
 
    // if (move_uploaded_file(basename($_FILES["filename"]["tmp_name"]), $target_dir)) {
@@ -50,47 +52,36 @@ if (isset($_FILES['filename'])) {
 }
 
 
-
-
 $cerere = $_POST['cerere'];
 $date = $_POST['txtDate'];
-$time = $_POST['time'];
+$time = $_POST['time'] . ':00';
 $id = clean($id);
 if (empty($cerere)) {
-   $page = file_get_contents("programare.html");
-   echo $page;
-   echo "<script>alert('Introduceti cererea');</script>";
-
-   return;
+   echo "<script>alert('Introduceti cererea');
+   window.location.href='programare.php';
+   </script>";
 }
 
 if (empty($date)) {
-   $page = file_get_contents("programare.html");
-   echo $page;
-   echo "<script>alert('Introduceti data');</script>";
-   return;
+   echo "<script>alert('Introduceti o data valida');
+   window.location.href='programare.php';
+   </script>";
 }
 
 if (empty($time)) {
-   $page = file_get_contents("programare.html");
-   echo $page;
-   echo "<script>alert('Introduceti ora');</script>";
-   return;
+   echo "<script>alert('Introduceti o data valida');
+   window.location.href='programare.php';
+   </script>";
 }
-
 
 $select = "SELECT * from cereri;";
 $query = mysqli_query($conn, $select);
-
-
 
 
 $count = mysqli_num_rows($query);
 
 $select2 = "SELECT * from programari";
 $query2 = mysqli_query($conn, $select2);
-
-
 
 
 $ok = 0;
@@ -108,10 +99,9 @@ if (mysqli_num_rows($query2) > 0) {
 
             while ($row2 = mysqli_fetch_assoc($query3)) {
                if ($row2["StatusCerere"] == $app) {
-                  $page = file_get_contents("programare.html");
-                  echo $page;
-                  echo "<script>alert('Ora rezervata')</script>";
-                  return;
+                  echo "<script>alert('Ora rezervata');
+                  window.location.href='programare.php';
+                  </script>";
                }
             }
          }
@@ -144,6 +134,7 @@ $insert2 = "INSERT INTO programari(ID,DataProgramarii,OraProgramarii,IdUser) VAL
 $query2 = mysqli_query($conn, $insert);
 $query3 = mysqli_query($conn, $insert2);
 mysqli_close($conn);
-$page = file_get_contents("programare.html");
-echo $page;
-echo "<script>alert('Cerere inregistrata cu succes!');</script>";
+echo "<script>
+      alert('Cerere inregistrata cu succes!');
+      window.location.href='programare.php';
+      </script>";

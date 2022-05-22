@@ -23,19 +23,14 @@ $qq = mysqli_num_rows($query);
 $row = mysqli_fetch_assoc($query);
 if ($row["Parola"] == $psw) {
   mysqli_close($conn);
-  $homepage = file_get_contents("home.html");
-  echo $homepage;
+  session_start();
 
-  echo "<script> localStorage.setItem('user', JSON.stringify('" . $row["Email"] . "')); alert('Logarea a avut succes!'); </script>";
+  $_SESSION["id"] = $row["ID"];
+  $_SESSION["email"] = $row["Email"];
+  $_SESSION["rol"] = $row["rol"] ? 'admin' : 'user';
 
-  echo "<script> localStorage.setItem('id', JSON.stringify('" . $row["ID"] . "'));  </script>";
-  echo "<script> localStorage.setItem('nume', JSON.stringify('" . $row["Nume"] . "'));  </script>";
-  echo "<script> localStorage.setItem('prenume', JSON.stringify('" . $row["Prenume"] . "'));  </script>";
-  echo "<script> localStorage.setItem('email', JSON.stringify('" . $row["Email"] . "'));  </script>";
-  echo "<script> localStorage.setItem('telefon', JSON.stringify('" . $row["NumarTelefon"] . "'));  </script>";
-  echo "<script> localStorage.setItem('parola', JSON.stringify('" . $row["Parola"] . "'));  </script>";
-
-  echo "<script> localStorage.setItem('logat', JSON.stringify('logat'));  </script>";
+  var_export($_SESSION);
+  header("Location:home.php");
 } else {
   $login_page = file_get_contents("login.html");
   echo $login_page;

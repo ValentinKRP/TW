@@ -1,4 +1,9 @@
 <?php
+
+if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
+   session_start();
+}
+
 function clean($string)
 {
    $string = str_replace(' ', '-', $string);
@@ -6,24 +11,41 @@ function clean($string)
 
    return preg_replace('/-+/', '-', $string);
 }
+
+$id = $_SESSION['id'];
+
+$id = clean($id);
+
+if (!$id) {
+   header('Location:login.html');
+}
+
+include "header.php";
+
+?>
+
+<body style="background-color: white">
+
+   <?php include_once "navbar.php" ?>
+
+   <h3 style="text-align:center">
+      <a>Programari user</a>
+      <br>
+      <img alt="?" src="image/logo.png" style="border-radius: 50%;" width="160" height="160">
+   </h3>
+
+</body>
+
+<?php
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "ServiceOnline";
 
-$id = $_POST['id_user'];
-
-
-
-$id = clean($id);
-
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-
-
 mysqli_close($conn);
-$page = file_get_contents("edit_clear.html");
-echo $page;
 
 $tabel = "<table class='bodyp' border=1 style='width:100%;overflow-x:auto;'><tbody id='tbody-header'>";
 $tabel .= "<tr style='background-color:black; color:white;'><td align=center>Status</td>";
@@ -38,7 +60,7 @@ echo $tabel;
 <div id='no_pages' class='no_pages'>
 </div>
 
-
+<script src="fetch.js"></script>
 <script type="text/javascript">
    document.addEventListener("DOMContentLoaded", function() {
 

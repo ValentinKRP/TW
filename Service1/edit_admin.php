@@ -25,6 +25,10 @@ include "header.php";
     <div style="text-align:center">
         <button class="sub" onclick="location.href = 'logout.php';">Logout</button>
         <br>
+        <a href="admin.php">
+            <button class="sub">Vizualizari cereri</button>
+        </a>
+        <br>
         <form method="post" action="download_csv.php">
             <button type="submit" class="sub">Download users csv</button>
         </form>

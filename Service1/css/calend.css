@@ -137,3 +137,7 @@ div#calendar{
     pointer-events: none;
     opacity: 0.5;
   }
+
+  .hide-hour {
+      display: none;
+  }

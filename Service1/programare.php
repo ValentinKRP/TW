@@ -51,10 +51,11 @@ include "header.php";
       <br>
       <label for="time">Ora: </label>
       <select name="time" id="time">
+        <option value="none" selected disabled>Selectati ora</option>
         <?php
         for ($i = 8; $i <= 18; $i++) {
           // TO DO: daca ora e ocupata nu o afisez
-          echo "<option value=" . $i . ">" . $i . ":00" . "</option>";
+          echo "<option id='time-" . $i . "' value=" . $i . ">" . $i . ":00" . "</option>";
         }
         ?>
       </select>
@@ -76,16 +77,18 @@ include "header.php";
   </form>
 
   <script>
+    let monthDates;
+
     let currentDate = new Date();
     let month = <?= json_encode($month) ?>;
     let year = <?= json_encode($year) ?>;
-
+    console.log(month);
     let monthJSON = [
       31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
     ]
 
 
-    for (let i = 1; i <= monthJSON[parseInt(parseInt(month, 10) + 1, 10)]; i++) {
+    for (let i = 1; i <= monthJSON[parseInt(parseInt(month, 10) - 1, 10)]; i++) {
 
       let currentId = "li-" + year + '-' + month + '-';
       currentId += (i < 10) ? '0' + i : i;
@@ -98,8 +101,30 @@ include "header.php";
         document.getElementById(currentId).addEventListener("click", function(e) {
           removeClass();
           this.classList.add("calendar-selected");
-          document.getElementById('txtDate').value = year + '-' + month + '-' + this.innerHTML;
+          let day = this.innerHTML < 10 ? '0' + this.innerHTML : this.innerHTML;
+          let hiddenDate = year + '-' + month + '-' + day;
+          document.getElementById('txtDate').value = hiddenDate;
+
+          checkHours(day, month, year);
         });
+      }
+    }
+
+    function checkHours(day, month, year) {
+      let hourDates = monthDates[year + '-' + month + '-' + day];
+      document.getElementById('time').value = 'none';
+
+      for (let i = 8; i <= 18; i++) {
+        document.getElementById('time-' + i).classList.remove('hide-hour');
+      }
+
+      if (hourDates) {
+        console.log(hourDates);
+
+        for (let i = 0; i < hourDates.length; i++) {
+          let currentHour = hourDates[i].split(':')[0];
+          document.getElementById('time-' + currentHour).classList.add('hide-hour');
+        }
       }
     }
 
@@ -112,14 +137,15 @@ include "header.php";
 
     checkDates(month, year);
 
+
     function checkDates(month, year) {
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function() {
-        response = JSON.parse(this.responseText);
-        console.log(response);
-        for (const date in response) {
+        monthDates = JSON.parse(this.responseText);
+        console.log(monthDates);
+        for (const date in monthDates) {
           // MODIFIED TO 10
-          if (response[date].length > 3) {
+          if (monthDates[date].length > 12) {
             document.getElementById('li-' + date).classList.add('calendar-full');
           }
         }

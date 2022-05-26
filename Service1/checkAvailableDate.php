@@ -17,20 +17,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['month']) && isset($_GET
 
     $wantedDate = $year . "-" . $month . "-";
 
-    $select = "SELECT DataProgramarii, OraProgramarii from programari WHERE DataProgramarii LIKE '$wantedDate%'";
+    $select = "SELECT DataDorita, OraDorita from cereri WHERE StatusCerere LIKE 'Aprobat' AND DataDorita LIKE '$wantedDate%'";
 
     $query = mysqli_query($conn, $select);
-
 
     $count = mysqli_num_rows($query);
     $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
     $groupedDates = [];
     foreach ($result as $r) {
-        if (!isset($groupedDates[$r['DataProgramarii']]))
-            $groupedDates[$r['DataProgramarii']] = [];
+        if (!isset($groupedDates[$r['DataDorita']]))
+            $groupedDates[$r['DataDorita']] = [];
 
-        array_push($groupedDates[$r['DataProgramarii']], $r['OraProgramarii']);
+        array_push($groupedDates[$r['DataDorita']], $r['OraDorita']);
     }
 
     echo json_encode($groupedDates);

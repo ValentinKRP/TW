@@ -30,7 +30,7 @@ include "./models/header.php";
         </a>
         <br>
         <a href="vizualizare_programari.php">
-            <button class="sub">Vizualizare programari</button>
+            <button class="sub">Vizualizare programari aprobate</button>
         </a>
         <br>
         <form method="post" action="download_csv.php">

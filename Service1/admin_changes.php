@@ -3,13 +3,10 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     session_start();
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ServiceOnline";
+include_once("db/connection.php");
 
+$conn = OpenCon();
 $chose = "a";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
 if (isset($_POST['ap'])) {
     $chose = "Aprobat";
 } elseif (isset($_POST['res'])) {

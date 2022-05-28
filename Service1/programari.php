@@ -39,13 +39,10 @@ include "./models/header.php";
 <?php
 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ServiceOnline";
+// include_once("db/connection.php");
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-mysqli_close($conn);
+// $conn = OpenCon();
+// mysqli_close($conn);
 
 $tabel = "<table class='bodyp' border=1 style='width:100%;overflow-x:auto;'><tbody id='tbody-header'>";
 $tabel .= "<tr style='background-color:black; color:white;'><td align=center>Status</td>";

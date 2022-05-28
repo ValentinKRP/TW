@@ -19,11 +19,9 @@ include "./models/header.php";
 
 
    <?php
-   $servername = "localhost";
-   $username = "root";
-   $password = "";
-   $dbname = "ServiceOnline";
-   $conn = mysqli_connect($servername, $username, $password, $dbname);
+   include_once("db/connection.php");
+
+   $conn = OpenCon();
 
 
    $select = "SELECT * from cererifurnizori";

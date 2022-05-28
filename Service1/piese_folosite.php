@@ -18,13 +18,10 @@ include "./models/header.php";
     </h3>
 
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ServiceOnline";
+    include_once("db/connection.php");
 
+    $conn = OpenCon();
     $chose = "a";
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
 
     $select = "SELECT * from piese";
     $query = mysqli_query($conn, $select);

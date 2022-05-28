@@ -5,12 +5,9 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['month']) && isset($_GET['year']) && isset($_GET['day'])) {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ServiceOnline";
+    include_once("db/connection.php");
 
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = OpenCon();
 
     $month = $_GET['month'];
     $year = $_GET['year'];

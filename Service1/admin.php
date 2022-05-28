@@ -21,7 +21,7 @@ include "./models/header.php";
     <?php
     include_once("db/connection.php");
 
-    $conn = OpenCon();
+    
     $select = "SELECT * from cereri where StatusCerere='In asteptare'";
     $query = mysqli_query($conn, $select);
 

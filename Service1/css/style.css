@@ -117,12 +117,11 @@ body {margin:0;
 
 input[type=text] {
   padding: 6px;
-  margin-top: 80px;
-   
-  
   font-size: 17px;
   border: none;
 }
+
+
 
  .search-container button {
   float: right;
@@ -150,7 +149,7 @@ p.name{
   font-family: Brush Script MT, Brush Script Std, cursive;
   position: absolute;
   left: 220px;
-  margin-top: -185px;
+  margin-top: -150px;
   font-size: 130px;
 }
 

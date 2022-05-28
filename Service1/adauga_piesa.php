@@ -21,7 +21,7 @@ include "./models/header.php";
     <?php
     include_once("db/connection.php");
 
-    $conn = OpenCon();
+    
 
     $select = "SELECT * from piese";
     $query = mysqli_query($conn, $select);

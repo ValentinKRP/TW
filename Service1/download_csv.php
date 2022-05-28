@@ -1,7 +1,7 @@
 <?php
 include_once("db/connection.php");
 
-$conn = OpenCon();
+
 $select="SELECT * from conturi";
 $query = mysqli_query($conn,$select);
 

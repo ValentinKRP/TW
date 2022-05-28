@@ -41,7 +41,7 @@ include "./models/header.php";
 
 // include_once("db/connection.php");
 
-// $conn = OpenCon();
+// 
 // mysqli_close($conn);
 
 $tabel = "<table class='bodyp' border=1 style='width:100%;overflow-x:auto;'><tbody id='tbody-header'>";

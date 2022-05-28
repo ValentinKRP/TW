@@ -5,7 +5,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
 
 include_once("db/connection.php");
 
-$conn = OpenCon();
+
 $chose = "a";
 if (isset($_POST['ap'])) {
     $chose = "Aprobat";

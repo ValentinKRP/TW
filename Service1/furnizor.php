@@ -5,7 +5,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
 
 include_once("db/connection.php");
 
-$conn = OpenCon();
+
 $tip = $_POST["tip"];
 $cantitate = $_POST["cantitate"];
 $furnizor = $_POST["furnizor"];

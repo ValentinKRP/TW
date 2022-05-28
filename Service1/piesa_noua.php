@@ -8,7 +8,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include_once("db/connection.php");
 
-    $conn = OpenCon();
+    
 
     $nume = $_POST["nume"];
 

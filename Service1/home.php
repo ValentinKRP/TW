@@ -15,7 +15,7 @@ include "./models/header.php";
 
   <img alt="?" src="image/logo.png" width="200" height="200">
 
-  <p class="name" style="font-size:11vw;">Service Online</p>
+  <p class="name" style="font-size:8vw;">Service Online</p>
   <div class=contact id=cont>
     <p style="font-family: Brush Script MT, Brush Script Std, cursive; font-size:25px; color:white;">Contact:</p>
     <p><img alt="?" src="image/phone-removebg-preview.jpg"><a href="tel:0734763968">0734763968</a></p>

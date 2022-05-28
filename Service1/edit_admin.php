@@ -29,6 +29,10 @@ include "./models/header.php";
             <button class="sub">Vizualizari cereri</button>
         </a>
         <br>
+        <a href="vizualizare_programari.php">
+            <button class="sub">Vizualizare programari</button>
+        </a>
+        <br>
         <form method="post" action="download_csv.php">
             <button type="submit" class="sub">Download users csv</button>
         </form>
@@ -41,15 +45,11 @@ include "./models/header.php";
         </a>
         <br>
         <a href="adauga_piesa.php">
-            <button class="sub">Cerere furnizor</button>
-        </a>
-        <br>
-        <a href="piese_folosite.php">
-            <button class="sub">Piese folosite</button>
+            <button class="sub">Trimite cerere furnizor</button>
         </a>
         <br>
         <a href="cereri_furnizor.php">
-            <button class="sub">Cereri furnizori</button>
+            <button class="sub">Vizualizare cereri furnizori</button>
         </a>
     </div>
 

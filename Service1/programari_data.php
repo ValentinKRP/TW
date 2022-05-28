@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id_user'])) {
 
     include_once("db/connection.php");
 
-    $conn = OpenCon();
+    
 
     if (isset($_GET['no_rows']) && $_GET['no_rows'] != 'all') {
         $startRows = ($_GET['no_rows'] - 1) * 5;

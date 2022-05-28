@@ -7,7 +7,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['month']) && isset($_GET['year']) && isset($_GET['day'])) {
     include_once("db/connection.php");
 
-    $conn = OpenCon();
+    
 
     $month = $_GET['month'];
     $year = $_GET['year'];

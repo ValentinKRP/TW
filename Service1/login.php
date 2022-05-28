@@ -2,7 +2,7 @@
 <?php
 include_once("db/connection.php");
 
-$conn = OpenCon();
+
 
 $email = $_POST["email"];
 

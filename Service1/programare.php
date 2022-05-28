@@ -54,7 +54,7 @@ include "./models/header.php";
         <option value="none" selected disabled>Selectati ora</option>
         <?php
         for ($i = 8; $i <= 18; $i++) {
-          // TO DO: daca ora e ocupata nu o afisez
+
           echo "<option id='time-" . $i . "' value=" . $i . ">" . $i . ":00" . "</option>";
         }
         ?>

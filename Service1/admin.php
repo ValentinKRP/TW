@@ -3,13 +3,13 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     session_start();
 }
 
-include "header.php";
+include "./models/header.php";
 
 ?>
 
 <body style="background-color: white">
 
-    <?php include_once "navbar.php" ?>
+    <?php include_once "./models/navbar.php" ?>
 
     <h3 style="text-align:center">
         <a>Vizualizare stoc</a>

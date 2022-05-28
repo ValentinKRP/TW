@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-include "header.php";
+include "./models/header.php";
 
 ?>
 
@@ -66,7 +66,7 @@ include "header.php";
 
 <body style="background-color: white">
 
-    <?php include_once "navbar.php" ?>
+    <?php include_once "./models/navbar.php" ?>
 
     <h3 style="text-align:center">
         <img alt="?" src="image/logo.png" style="border-radius: 50%;" width="160" height="160">

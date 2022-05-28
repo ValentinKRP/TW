@@ -6,12 +6,12 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
 
 // var_export($_SESSION);
 
-include "header.php";
+include "./models/header.php";
 ?>
 
 <body>
 
-  <?php include_once "navbar.php" ?>
+  <?php include_once "./models/navbar.php" ?>
 
   <img alt="?" src="image/logo.png" width="200" height="200">
 
@@ -47,7 +47,7 @@ include "header.php";
     <span class="dot"></span>
   </div>
 
-  <!-- <script src="functii.js"></script> -->
+  <!-- <script src="./JS/functii.js"></script> -->
 
 </body>
 

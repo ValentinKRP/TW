@@ -20,13 +20,13 @@ if (!$id) {
    header('Location:login.html');
 }
 
-include "header.php";
+include "./models/header.php";
 
 ?>
 
 <body style="background-color: white">
 
-   <?php include_once "navbar.php" ?>
+   <?php include_once "./models/navbar.php" ?>
 
    <h3 style="text-align:center">
       <a>Programari user</a>
@@ -60,7 +60,7 @@ echo $tabel;
 <div id='no_pages' class='no_pages'>
 </div>
 
-<script src="fetch.js"></script>
+<script src="./JS/fetch.js"></script>
 <script type="text/javascript">
    document.addEventListener("DOMContentLoaded", function() {
 

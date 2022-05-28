@@ -52,26 +52,25 @@ if (isset($_FILES['filename'])) {
       $imagename = $_FILES["filename"]["name"];
       $check = mime_content_type($_FILES["filename"]["tmp_name"]);
 
-      // if ($check != 'image/png' && $check != 'image/jpg') {
-      //    echo "<script>alert('Format fisier gresit');
-      //    window.location.href='programare.php';
-      //    </script>";
-      // }
+      if ($check != 'image/png' && $check != 'image/jpg') {
+         echo "<script>alert('Format fisier gresit');
+         window.location.href='programare.php';
+         </script>";
+      }
 
-      // $target_dir = "uploads/" . trim($id, "\"");
+      $target_dir = "uploads/" . trim($id, "\"");
 
-      // if (!file_exists($target_dir)) {
-      //    mkdir($target_dir, 0777, true);
-      // }
+      if (!file_exists($target_dir)) {
+         mkdir($target_dir, 0777, true);
+      }
 
 
-      // if (move_uploaded_file(basename($_FILES["filename"]["tmp_name"]), $target_dir)) {
-      //    echo "The file has been uploaded.";
-      // } else {
-      //    echo "Sorry, there was an error uploading your file.";
-      //    var_export($_FILES["filename"]);
-      // }
-
+      if (move_uploaded_file(basename($_FILES["filename"]["tmp_name"]), $target_dir)) {
+         echo "The file has been uploaded.";
+      } else {
+         echo "Sorry, there was an error uploading your file.";
+         var_export($_FILES["filename"]);
+      }
    } else {
       echo "<script>alert('Introduceti o poza cu problema');
       window.location.href='programare.php';

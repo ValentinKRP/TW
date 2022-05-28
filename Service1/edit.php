@@ -4,7 +4,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     session_start();
 }
 
-include "header.php";
+include "./models/header.php";
 ?>
 
 <head>
@@ -14,7 +14,7 @@ include "header.php";
 
 <body style="background-color: white">
 
-    <?php include_once "navbar.php" ?>
+    <?php include_once "./models/navbar.php" ?>
 
     <h3 style="text-align:center">
         <a>Pagina principala user</a>
@@ -31,7 +31,7 @@ include "header.php";
     </div>
 
     <p id="date_utilizator"></p>
-    <script src="functii.js"></script>
+    <script src="./JS/functii.js"></script>
 </body>
 
 </html>

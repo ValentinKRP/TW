@@ -16,7 +16,7 @@ if (isset($_GET) && isset($_GET['year'])) {
   $year = date('Y');
 }
 
-include "header.php";
+include "./models/header.php";
 ?>
 
 <head>
@@ -26,7 +26,7 @@ include "header.php";
 
 <body style="background-color: white;">
 
-  <?php include_once "navbar.php" ?>
+  <?php include_once "./models/navbar.php" ?>
 
   <h2 style="text-align:center">
     <a>Creeaza o programare</a>
@@ -145,7 +145,7 @@ include "header.php";
         console.log(monthDates);
         for (const date in monthDates) {
           // MODIFIED TO 10
-          if (monthDates[date].length > 12) {
+          if (monthDates[date].length > 9) {
             document.getElementById('li-' + date).classList.add('calendar-full');
           }
         }

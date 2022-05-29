@@ -21,7 +21,7 @@ include "./models/header.php";
 
 <head>
   <link rel="stylesheet" href="css/style_log.css">
-  <link href="css/calendar2.css" type="text/css" rel="stylesheet" />
+  <link href="css/calendar.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body style="background-color: white;">
@@ -41,7 +41,7 @@ include "./models/header.php";
       <br>
 
       <?php
-      include_once 'calendar2.php';
+      include_once 'calendar.php';
       ?>
       <label>Data dorita:</label><input type="hidden" id="txtDate" name="txtDate">
 

@@ -4,35 +4,35 @@ include_once("db/connection.php");
 
 
 
-$email = $_POST["email"];
+if (isset($_POST["email"]) && isset($_POST["psw"])) {
 
-$psw = $_POST["psw"];
+  $email = $_POST["email"];
 
-
-
-$select = "SELECT * from conturi where email='$email'";
-$query = mysqli_query($conn, $select);
+  $psw = $_POST["psw"];
 
 
+  $select = "SELECT * from conturi where email='$email'";
+  $query = mysqli_query($conn, $select);
 
-$qq = mysqli_num_rows($query);
-$row = mysqli_fetch_assoc($query);
-if ($row["Parola"] == $psw) {
-  mysqli_close($conn);
-  session_start();
 
-  $_SESSION["id"] = $row["ID"];
-  $_SESSION["email"] = $row["Email"];
-  $_SESSION["rol"] = $row["rol"] ? 'admin' : 'user';
+  $qq = mysqli_num_rows($query);
+  $row = mysqli_fetch_assoc($query);
+  if (isset($row) && $row["Parola"] && $row["Parola"] == $psw) {
+    mysqli_close($conn);
+    session_start();
 
-  var_export($_SESSION);
-  header("Location:home.php");
-} else {
-  $login_page = file_get_contents("login.html");
-  echo $login_page;
-  echo "<script>alert('Cont inexistent!');</script>";
+    $_SESSION["id"] = $row["ID"];
+    $_SESSION["email"] = $row["Email"];
+    $_SESSION["rol"] = $row["rol"] ? 'admin' : 'user';
+
+    var_export($_SESSION);
+    header("Location:home.php");
+  } else {
+    $login_page = file_get_contents("login.html");
+    echo $login_page;
+    echo "<script>alert('Cont inexistent!');</script>";
+  }
 }
-
 
 
 ?>

@@ -48,7 +48,7 @@ if (isset($_FILES['filename'])) {
       $imagename = $_FILES["filename"]["name"];
       $check = mime_content_type($_FILES["filename"]["tmp_name"]);
 
-      if ($check != 'image/png' && $check != 'image/jpg') {
+      if ($check != 'image/png' && $check !== 'image/jpg' && $check != 'image/jpeg') {
          echo "<script>alert('Format fisier gresit');
          window.location.href='programare.php';
          </script>";
@@ -56,18 +56,17 @@ if (isset($_FILES['filename'])) {
 
 
 
-      $target_dir = "uploads/";
+      $target_dir = "uploads/" . $id . '/';
       $target_file = $target_dir . basename($_FILES["filename"]["name"]);
       if (!file_exists($target_dir)) {
          mkdir($target_dir, 0777, true);
       }
 
 
-      if (move_uploaded_file(($_FILES["filename"]["tmp_name"]), $target_file)) {
-         echo "The file has been uploaded.";
-      } else {
-         echo "Sorry, there was an error uploading your file.";
-         var_export($_FILES["filename"]);
+      if (!move_uploaded_file(($_FILES["filename"]["tmp_name"]), $target_file)) {
+         echo "<script>alert('A fost o problema cu incarcarea fisierului');
+         window.location.href='programare.php';
+         </script>";
       }
    } else {
       echo "<script>alert('Introduceti o poza cu problema');
@@ -75,7 +74,6 @@ if (isset($_FILES['filename'])) {
       </script>";
    }
 }
-
 
 $select = "SELECT * from cereri;";
 $query = mysqli_query($conn, $select);

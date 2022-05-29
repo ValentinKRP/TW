@@ -82,7 +82,7 @@ include "./models/header.php";
     let currentDate = new Date();
     let month = <?= json_encode($month) ?>;
     let year = <?= json_encode($year) ?>;
-    console.log(month);
+
     let monthJSON = [
       31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
     ]
@@ -107,6 +107,11 @@ include "./models/header.php";
 
           checkHours(day, month, year);
         });
+      }
+
+      let buildedDate = new Date(tempDate);
+      if (buildedDate.getDay() == 6 || buildedDate.getDay() == 0) {
+        document.getElementById(currentId).classList.add('calendar-disabled');
       }
     }
 

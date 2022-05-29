@@ -27,7 +27,6 @@ function checkDates(month, year) {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function () {
     monthDates = JSON.parse(this.responseText);
-    console.log(monthDates);
     for (const date in monthDates) {
       // MODIFIED TO 10
       if (monthDates[date].length > 10) {

@@ -137,7 +137,7 @@ $insert2 = "INSERT INTO programari(ID,DataProgramarii,OraProgramarii,IdUser) VAL
 $query2 = mysqli_query($conn, $insert);
 $query3 = mysqli_query($conn, $insert2);
 mysqli_close($conn);
-// echo "<script>
-//       alert('Cerere inregistrata cu succes!');
-//       window.location.href='programare.php';
-//       </script>";
+echo "<script>
+      alert('Cerere inregistrata cu succes!');
+      window.location.href='programare.php';
+      </script>";

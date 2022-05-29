@@ -21,7 +21,7 @@ include "./models/header.php";
 
 <head>
   <link rel="stylesheet" href="css/style_log.css">
-  <link href="css/calend.css" type="text/css" rel="stylesheet" />
+  <link href="css/calendar2.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body style="background-color: white;">
@@ -39,12 +39,9 @@ include "./models/header.php";
       <p style="font-size:20px">Introduceti motivul programarii:</p>
       <textarea id="cerere" name="cerere" maxlength="2000" rows="5" cols="60" required></textarea>
       <br>
+
       <?php
-      include 'calendar.php';
-
-      $calendar = new Calendar();
-
-      echo $calendar->show();
+      include_once 'calendar2.php';
       ?>
       <label>Data dorita:</label><input type="hidden" id="txtDate" name="txtDate">
 
@@ -91,7 +88,7 @@ include "./models/header.php";
     for (let i = 1; i <= monthJSON[parseInt(parseInt(month, 10) - 1, 10)]; i++) {
 
       let currentId = "li-" + year + '-' + month + '-';
-      currentId += (i < 10) ? '0' + i : i;
+      currentId += i;
 
       let tempDate = new Date(year + '-' + month + '-' + i);
 

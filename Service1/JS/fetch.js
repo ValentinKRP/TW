@@ -44,10 +44,13 @@ function getTableData(id_user, no_rows) {
         }
 
         let output = "";
+        console.log(data);
         for (let i in data) {
           output += `<tr style='background-color:gray'>
                 <td align=center>${data[i].StatusCerere}</td>
-                <td align=center>${data[i].TextUtilizator}</td>            
+                <td align=center>${data[i].TextUtilizator}</td>
+                <td align=center>${data[i].OraDorita}</td>
+                <td align=center>${data[i].DataDorita}</td>           
                 <td align=center>${data[i].Raspuns}.</td>
                 </tr>`;
         }

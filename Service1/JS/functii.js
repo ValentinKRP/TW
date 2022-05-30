@@ -9,7 +9,7 @@ function myFunction() {
     x.className = "topnav";
   }
 }
-document.getElementById("nr").innerHTML = "22";
+// document.getElementById("nr").innerHTML = "22";
 
 function showSlides() {
   var i;

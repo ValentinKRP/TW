@@ -131,9 +131,9 @@ $id_max = $id_max + 1;
 
 
 $insert = "INSERT INTO cereri(ID, TextUtilizator, StatusCerere, DataDorita,OraDorita, IdCont,Raspuns, imagename) VALUES ('$id_max','$cerere','$stat','$date','$time','$id','$raspuns', '$imagename')";
-$insert2 = "INSERT INTO programari(ID,DataProgramarii,OraProgramarii,IdUser) VALUES ('$id_max','$date','$time','$id')";
+// $insert2 = "INSERT INTO programari(ID,DataProgramarii,OraProgramarii,IdUser) VALUES ('$id_max','$date','$time','$id')";
 $query2 = mysqli_query($conn, $insert);
-$query3 = mysqli_query($conn, $insert2);
+// $query3 = mysqli_query($conn, $insert2);
 mysqli_close($conn);
 echo "<script>
       alert('Cerere inregistrata cu succes!');

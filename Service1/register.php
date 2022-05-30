@@ -9,7 +9,7 @@ $nume = $_POST["nume"];
 $prenume = $_POST["prenume"];
 
 $telefon = $_POST["telefon"];
-$psw = $_POST["psw"];
+$psw = password_hash($_POST['psw'], PASSWORD_DEFAULT);
 
 
 
@@ -44,15 +44,20 @@ if ($ok == 0) {
     $query2 = mysqli_query($conn, $insert);
 
     mysqli_close($conn);
-    $register_page = file_get_contents("home.php");
-    echo $register_page;
-    echo "<script>alert('Contul a fost realizat cu succes!');</script>";
+
+    echo "<script>alert('Contul a fost realizat cu succes!');
+   
+
+      window.location.href='home.php';
+     
+    </script>";
 } else
     if ($ok == 1) {
     mysqli_close($conn);
-    $register_page = file_get_contents("register.html");
-    echo $register_page;
-    echo "<script>alert('Email deja utilizat!');</script>";
+
+    echo "<script>alert('Email deja utilizat!');
+    window.location.href='register.html';
+    </script>";
 }
 
 

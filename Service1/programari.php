@@ -47,10 +47,14 @@ include "./models/header.php";
 $tabel = "<table class='bodyp' border=1 style='width:100%;overflow-x:auto;'><tbody id='tbody-header'>";
 $tabel .= "<tr style='background-color:black; color:white;'><td align=center>Status</td>";
 $tabel .= "<td align=center >Cerere</td>";
+$tabel .= "<td align=center >Ora</td>";
+$tabel .= "<td align=center >Data</td>";
 $tabel .= "<td align=center >Raspuns</td>";
+
 $tabel .= "</tr>";
 $tabel .= "</tbody></table>";
 echo $tabel;
+
 
 ?>
 

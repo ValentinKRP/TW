@@ -36,27 +36,27 @@ include "./models/header.php";
   </h2>
   <form method=post action='plasare.php' enctype="multipart/form-data">
     <div style="text-align:center" class="container">
-      <p style="font-size:20px">Introduceti motivul programarii:</p>
-      <textarea id="cerere" name="cerere" maxlength="2000" rows="5" cols="60" required></textarea>
-      <br>
 
+      <label>Data dorita:</label><input type="hidden" id="txtDate" name="txtDate">
       <?php
       include_once 'calendar.php';
       ?>
-      <label>Data dorita:</label><input type="hidden" id="txtDate" name="txtDate">
+
 
       <br>
       <label for="time">Ora: </label>
       <select name="time" id="time">
         <option value="none" selected disabled>Selectati ora</option>
         <?php
-        for ($i = 8; $i <= 18; $i++) {
+        for ($i = 8; $i <= 17; $i++) {
 
           echo "<option id='time-" . $i . "' value=" . $i . ">" . $i . ":00" . "</option>";
         }
         ?>
       </select>
-
+      <p style="font-size:20px">Introduceti motivul programarii:</p>
+      <textarea id="cerere" name="cerere" maxlength="2000" rows="5" cols="60" required></textarea>
+      <br>
       <br>
       <label>Imagine: </label><input type="file" id="myFile" name="filename" id="filename">
       <p id="iflogged">
@@ -98,7 +98,7 @@ include "./models/header.php";
         document.getElementById(currentId).addEventListener("click", function(e) {
           removeClass();
           this.classList.add("calendar-selected");
-          let day = this.innerHTML < 10 ? '0' + this.innerHTML : this.innerHTML;
+          let day = this.innerHTML;
           let hiddenDate = year + '-' + month + '-' + day;
           document.getElementById('txtDate').value = hiddenDate;
 

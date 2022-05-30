@@ -17,7 +17,7 @@ if (isset($_POST["email"]) && isset($_POST["psw"])) {
 
   $qq = mysqli_num_rows($query);
   $row = mysqli_fetch_assoc($query);
-  if (isset($row) && $row["Parola"] && $row["Parola"] == $psw) {
+  if (isset($row) && $row["Parola"] && password_verify($psw, $row['Parola'])) {
     mysqli_close($conn);
     session_start();
 

@@ -31,17 +31,11 @@ function add($nr){
    $id = $_POST['id'];
 
    include("db/connection.php");
-   $select = "SELECT * from piese where ID='$id'";
-   $query = mysqli_query($conn, $select);
-   $sum = 0;
+   $select = "SELECT Numar from piese where ID='$id'";
+   $result = mysqli_query($conn, $select);
+   $row = mysqli_fetch_row($result);
+   $sum = (int)$row[0]+ (int)$nr;
    
-   if (mysqli_num_rows($query) > 0) {
-
-
-      while ($row = mysqli_fetch_assoc($query)) {
-         $sum = (int)$row["Numar"] + (int)$nr;
-      }
-   }
    if( $sum < 0) {
       echo "<script>
       alert('Stocul nu poate fi negativ!');
@@ -77,7 +71,7 @@ function add($nr){
 
    $tabel = "<table border=1 style='width:100%;overflow-x:auto;'>";
    $tabel .= "<tr style='background-color:black; color:white;'>
-      <td align=center>ID</td>";
+               <td align=center>ID</td>";
    $tabel .= "<td align=center>Nume</td>";
    $tabel .= "<td align=center>Bucati</td>";
    $tabel .= "<td align=center>Adauga/Scade</td>";
@@ -91,10 +85,10 @@ function add($nr){
       while ($row = mysqli_fetch_assoc($query)) {
 
          $tabel .= "<tr style='background-color:gray'>
-      <td align=center>" . $row["ID"] . "</td>
-      <td align=center>" . $row["NumePiesa"] . "</td>
-      <td align=center>" . $row["Numar"] . "</td>
-      <td align=center>". '<form action="stoc.php" method="post">
+         <td align=center>" . $row["ID"] . "</td>
+         <td align=center>" . $row["NumePiesa"] . "</td>
+         <td align=center>" . $row["Numar"] . "</td>
+         <td align=center>". '<form action="stoc.php" method="post">
          <input type="submit" class= button name="sub" value="-" />
          <input type="text" placeholder="Adauga/Scade" name="nr" value=""/>
          <input type="submit" class= button name="add" value="+" />

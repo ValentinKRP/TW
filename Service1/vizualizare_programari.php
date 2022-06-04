@@ -23,7 +23,7 @@ include "./models/header.php";
    include("db/connection.php");
 
    
-   $select = "SELECT * from programari NATURAL JOIN conturi" ;
+   $select = "SELECT * from programari NATURAL JOIN conturi";
    $query = mysqli_query($conn, $select);
 
    mysqli_close($conn);

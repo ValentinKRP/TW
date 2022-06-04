@@ -3,7 +3,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     session_start();
 }
 
-include_once("db/connection.php");
+include("db/connection.php");
 
 
 $chose = "a";
@@ -26,20 +26,39 @@ if (strcmp($mesaj, "In asteptare") !== 0) {
     $query1 = mysqli_query($conn, $update2);
 } else {
     echo "<script>alert('Introduceti raspunsul');
-            window.location.href='admin.php'</script>";
+            window.location.href='cereri_asteptare.php'</script>";
 }
-$select = "SELECT * from cereri where StatusCerere='In asteptare'";
-$query = mysqli_query($conn, $select);
 
-
-$count = mysqli_num_rows($query);
 
 if ($chose == 'Aprobat') {
+
+    $slct = "SELECT * FROM programari";
+    $query = mysqli_query($conn, $slct);
+    $idMax = 0;
+
+    if (mysqli_num_rows($query) > 0) {
+
+
+        while ($row = mysqli_fetch_assoc($query)) {
+            if ($row["ID"] > $idMax)
+                $idMax = $row["ID"];
+        }
+    }
+
+    $idMax = $idMax +1;
+    $dataProg = $_POST['data'];
+    $oraProg = $_POST['ora'];
+    $idCont = $_POST['idCont'];
+    
+    $insert2 = "INSERT INTO programari(ID,DataProgramarii,OraProgramarii,IdUser) VALUES ('$idMax','$dataProg','$oraProg','$idCont')";
+    $query3 = mysqli_query($conn, $insert2);
+
     echo "<script>alert('Cerere aprobata cu succes');
-    window.location.href='admin.php'</script>";
+    window.location.href='cereri_asteptare.php'</script>";
+
 } elseif ($chose == 'Respins') {
     echo "<script>alert('Cerere respinsa cu succes');
-    window.location.href='admin.php'</script>";
+    window.location.href='cereri_asteptare.php'</script>";
 } else {
     header('Location: programare.php', false, 400);
 }

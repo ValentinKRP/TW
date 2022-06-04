@@ -27,7 +27,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
                 $email = $_SESSION['email'] ? $_SESSION['email'] : 'Missing Email';
 
                 if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin') {
-                    echo "<a href='edit_admin.php'>" . $email . "</a>";
+                    echo "<a href='admin_meniu.php'>" . $email . "</a>";
                 } else {
                     echo "<a href='edit.php'>" . $email . "</a>";
                 }

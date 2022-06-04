@@ -19,10 +19,7 @@ if (isset($_GET) && isset($_GET['year'])) {
 include "./models/header.php";
 ?>
 
-<head>
-  <link rel="stylesheet" href="css/style_log.css">
-  <link href="css/calendar.css" type="text/css" rel="stylesheet" />
-</head>
+
 
 <body style="background-color: white;">
 
@@ -58,8 +55,8 @@ include "./models/header.php";
       <textarea id="cerere" name="cerere" maxlength="2000" rows="5" cols="60" required></textarea>
       <br>
       <br>
-      <label>Imagine: </label><input type="file" id="myFile" name="filename" id="filename">
-      <p id="iflogged">
+      <label>Imagine: </label><input type="file" name="filename" id="filename">
+      <div id="iflogged">
         <?php
         if (isset($_SESSION['id'])) {
           echo "<input id='id_user' name='id_user' type='hidden' value=" . $_SESSION["id"] . " >";
@@ -69,7 +66,7 @@ include "./models/header.php";
         }
         ?>
 
-      </p>
+      </div>
     </div>
   </form>
   <script src="./JS/calendar.js"></script>

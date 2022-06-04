@@ -35,48 +35,47 @@ if ($month == 1) {
 }
 ?>
 
-<body>
-    <div id="calendar">
-        <div class="box">
-            <div class="header">
-                <a class="prev" href="programare.php?month=<?= $prevMonth; ?>&amp;year=<?= $prevYear; ?>">Prev</a>
-                <span class="title"><?= $year . " " . $monthName; ?></span>
-                <a class="next" href="programare.php?month=<?= $nextMonth; ?>&amp;year=<?= $nextYear; ?>">Next</a>
-            </div>
-        </div>
-        <div class="box-content">
-            <ul class="label">
-                <?php foreach ($daysName as $d) { ?>
-                    <li class="start title title"><?= $d; ?></li>
-                <?php } ?>
-            </ul>
-            <div class="clear"></div>
-            <ul class="dates">
-                <?php
-                $key = array_search($firstDayName, $daysName);
-                for ($i = 1; $i < 8; $i++) {
-                    if ($i < $key) {
-                        if ($i == 1) { ?>
-                            <li id="li-" class="start mask"></li>
-                        <?php } else { ?>
-                            <li id="li-" class="mask"></li>
-                        <?php } ?>
 
-                        <?php } elseif ($i == $key) {
-                        for ($j = 1; $j <= $daysInMonth; $j++) {
-                            $yearMonthDay =  $year . "-" . $month . "-" . $j;
-                            $dayName = date('D', strtotime($yearMonthDay)); ?>
-                            <li id="li-<?= $yearMonthDay; ?>" class="<?php if ($dayName == 'Sun') {
-                                                                            echo "end";
-                                                                        } elseif ($dayName == 'Mon') {
-                                                                            echo "start";
-                                                                        } ?>"><?= $j; ?></li>
-                <?php }
-                    }
-                } ?>
-
-            </ul>
-            <div class="clear"></div>
+<div id="calendar">
+    <div class="box">
+        <div class="header">
+            <a class="prev" href="programare.php?month=<?= $prevMonth; ?>&amp;year=<?= $prevYear; ?>">Prev</a>
+            <span class="title"><?= $year . " " . $monthName; ?></span>
+            <a class="next" href="programare.php?month=<?= $nextMonth; ?>&amp;year=<?= $nextYear; ?>">Next</a>
         </div>
     </div>
-</body>
+    <div class="box-content">
+        <ul class="label">
+            <?php foreach ($daysName as $d) { ?>
+                <li class="start title title"><?= $d; ?></li>
+            <?php } ?>
+        </ul>
+        <div class="clear"></div>
+        <ul class="dates">
+            <?php
+            $key = array_search($firstDayName, $daysName);
+            for ($i = 1; $i < 8; $i++) {
+                if ($i < $key) {
+                    if ($i == 1) { ?>
+                        <li class="start mask"></li>
+                    <?php } else { ?>
+                        <li id="li-" class="mask"></li>
+                    <?php } ?>
+
+                    <?php } elseif ($i == $key) {
+                    for ($j = 1; $j <= $daysInMonth; $j++) {
+                        $yearMonthDay =  $year . "-" . $month . "-" . $j;
+                        $dayName = date('D', strtotime($yearMonthDay)); ?>
+                        <li id="li-<?= $yearMonthDay; ?>" class="<?php if ($dayName == 'Sun') {
+                                                                        echo "end";
+                                                                    } elseif ($dayName == 'Mon') {
+                                                                        echo "start";
+                                                                    } ?>"><?= $j; ?></li>
+            <?php }
+                }
+            } ?>
+
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>

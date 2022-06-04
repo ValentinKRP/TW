@@ -9,12 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/pagination.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/calendar.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style_log.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/links.css">
+    <link href="css/calendar.css" type="text/css" rel="stylesheet" />
 
-
-
+    <script src="./JS/functii.js"></script>
 
 </head>
-
-
-<script src="./JS/functii.js"></script>

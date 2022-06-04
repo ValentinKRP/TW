@@ -33,7 +33,30 @@ include "./models/header.php";
       <br>
       <img alt="?" src="image/logo.png" style="border-radius: 50%;" width="160" height="160">
    </h3>
+   <table class='bodyp' style='width:100%;overflow-x:auto; border: 1px solid;'>
+      <tbody id='tbody-header'>
+         <tr style='background-color:black; color:white;'>
+            <td style='text-align: center;'>Status</td>
+            <td style='text-align: center;'>Cerere</td>
+            <td style='text-align: center;'>Ora</td>
+            <td style='text-align: center;'>Data</td>
+            <td style='text-align: center;'>Raspuns</td>
 
+         </tr>
+      </tbody>
+   </table>
+   <div id='no_pages' class='no_pages'>
+   </div>
+   <script src="./JS/fetch.js"></script>
+   <script>
+      document.addEventListener("DOMContentLoaded", function() {
+
+         let id_user = <?php echo json_encode($id); ?>;
+         getTableData(id_user, 'all');
+
+         getTableData(id_user, 1)
+      });
+   </script>
 </body>
 
 <?php
@@ -44,30 +67,7 @@ include "./models/header.php";
 // 
 // mysqli_close($conn);
 
-$tabel = "<table class='bodyp' border=1 style='width:100%;overflow-x:auto;'><tbody id='tbody-header'>";
-$tabel .= "<tr style='background-color:black; color:white;'><td align=center>Status</td>";
-$tabel .= "<td align=center >Cerere</td>";
-$tabel .= "<td align=center >Ora</td>";
-$tabel .= "<td align=center >Data</td>";
-$tabel .= "<td align=center >Raspuns</td>";
 
-$tabel .= "</tr>";
-$tabel .= "</tbody></table>";
-echo $tabel;
 
 
 ?>
-
-<div id='no_pages' class='no_pages'>
-</div>
-
-<script src="./JS/fetch.js"></script>
-<script type="text/javascript">
-   document.addEventListener("DOMContentLoaded", function() {
-
-      let id_user = <?php echo json_encode($id); ?>;
-      getTableData(id_user, 'all');
-
-      getTableData(id_user, 1)
-   });
-</script>

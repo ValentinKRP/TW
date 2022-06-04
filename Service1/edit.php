@@ -7,10 +7,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
 include "./models/header.php";
 ?>
 
-<head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="css/style_log.css">
-</head>
+
 
 <body style="background-color: white">
 
@@ -25,9 +22,7 @@ include "./models/header.php";
     <div style="text-align:center">
         <button class="sub" onclick="location.href = 'logout.php';">Logout</button>
         <br>
-        <button class="sub">
-            <a href="programari.php" style="text-decoration: none">Vizualizare programari</a>
-        </button>
+        <button class="sub" onclick="location.href = 'programari.php';">Vizualizari programari</button>
     </div>
 
     <p id="date_utilizator"></p>

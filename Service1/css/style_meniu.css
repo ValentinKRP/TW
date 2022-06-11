@@ -5,7 +5,7 @@ body {
 
 .reg
 {
-  margin-right: 30px;
+ 
   float:right;
 }
 form {border: 3px solid #f1f1f1;}
@@ -64,7 +64,7 @@ span.psw {
 }
 
 
-@media screen and (max-width: 300px) {
+/* @media screen and (max-width: 300px) {
   span.psw {
      display: block;
      float: none;
@@ -72,7 +72,7 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
-}
+} */
 
 .topnav {
     overflow: hidden;
@@ -145,7 +145,7 @@ span.psw {
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  
+/*   
   @media screen and (max-width: 600px) {
     .topnav a:not(:first-child), .dropdown .dropbtn {
       display: none;
@@ -154,9 +154,9 @@ span.psw {
       float: right;
       display: block;
     }
-  }
+  } */
   
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive .icon {
       position: absolute;
@@ -175,7 +175,7 @@ span.psw {
       width: 100%;
       text-align: left;
     }
-  }
+  } */
 
   .badge {
     background-color: blue;

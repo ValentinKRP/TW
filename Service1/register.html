@@ -3,8 +3,12 @@
 <head>
 <title>Service</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/style_reg.css">
+<link rel="stylesheet" href="css/responsive1.css">
+
+
 </head>
 <body>
   <div class="topnav" id="myTopnav">
@@ -14,7 +18,7 @@
     <a href="register.html"><i>Inregistrare</i></a>
     <a href="program.php"><i>Program</i></a>
   
-    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+   
   </div>
 <form method="post" action="register.php" onsubmit="return check()"  enctype="multipart/form-data">
   <div style="text-align:center" class="container">
@@ -28,23 +32,23 @@
   </h3>
     <hr>
 
-    <label style='display:inline-block; text-align: right; width:100px;' for="email"><b>Email</b></label>
-    <input type="text"  name="email" placeholder="Introduceti Email"  id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+    <label style='display:inline-block;  width:100px;' for="email"><b>Email</b></label>
+    <input id="loginput" type="text"  name="email" placeholder="Introduceti Email"  id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
     <br>
-    <label style='display:inline-block; text-align: right; width:100px;' for="telefon"><b>Numarul de telefon</b></label>
-    <input type="text" placeholder="Introduceti Numarul de telefon" name="telefon" id="telefon" required>
+    <label style='display:inline-block;  width:100px;' for="telefon"><b>Numarul de telefon</b></label>
+    <input id="loginput" type="text" placeholder="Introduceti Numarul de telefon" name="telefon" id="telefon" required>
     <br>
-    <label style='display:inline-block; text-align: right; width:100px;' for="nume"><b>Nume</b></label>
-    <input type="text" placeholder="Introduceti Nume" name="nume" id="nume" required>
+    <label style='display:inline-block; width:100px;' for="nume"><b>Nume</b></label>
+    <input id="loginput" type="text" placeholder="Introduceti Nume" name="nume" id="nume" required>
     <br>
-    <label style='display:inline-block; text-align: right; width:100px;' for="prenume"><b>Prenume</b></label>
-    <input type="text" placeholder="Introduceti Prenume" name="prenume" id="prenume" required>
+    <label style='display:inline-block; width:100px;' for="prenume"><b>Prenume</b></label>
+    <input id="loginput" type="text" placeholder="Introduceti Prenume" name="prenume" id="prenume" required>
     <br>
-    <label style='display:inline-block; text-align: right; width:100px;' for="psw"><b>Parola</b></label>
-    <input type="password" placeholder="Introduceti Parola" name="psw" id="psw" onkeyup='check();' required>
+    <label style='display:inline-block;  width:100px;' for="psw"><b>Parola</b></label>
+    <input id="loginput" type="password" placeholder="Introduceti Parola" name="psw" id="psw" onkeyup='check();' required>
     <br>
-    <label style='display:inline-block; text-align: right; width:100px;' for="psw-repeat"><b>Repeta Parola</b></label>
-    <input type="password" placeholder="Repetati Parola" name="psw-repeat" id="psw-repeat"  onkeyup='check();' required>
+    <label style='display:inline-block;  width:100px;' for="psw-repeat"><b>Repeta Parola</b></label>
+    <input id="loginput" type="password" placeholder="Repetati Parola" name="psw-repeat" id="psw-repeat"  onkeyup='check();' required>
     <p id="valid"></p>
     <hr>
     <p style="text-align:center">Sunteti de acord cu termenii si conditiile magazinului <a href="#">Terms & Privacy</a>.</p>

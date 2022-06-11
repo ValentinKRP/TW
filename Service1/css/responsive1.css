@@ -1,0 +1,195 @@
+
+  
+  .indeximg{
+    height: 400px;
+   }
+   label{
+    text-align: right;
+   }
+   label#loglabel{
+    width: 100px;
+   }
+   input#loginput{
+    width: 100px;
+   }
+   input{
+    font-size: 15px;
+    
+   }
+
+   .bodyp{
+    width: 100%;
+  }
+  iframe#maps{
+    width: 95%;
+  }
+
+@media only screen and (max-width:700px){
+  
+   
+    body{
+       
+        width: 100%;
+     
+    }
+    .topnav{
+        width: 100%;
+    }
+    
+  input[type=text], input[type=password] {
+    width: 40%;
+   
+  }
+    textarea#cerere{
+      width: 70%;
+    }
+    p#motiv{
+      width: 90%;
+    }
+    iframe#maps{
+      width: 90%;
+    }
+    h3#program{
+      width: 95%;
+    }
+    h3#imgprog{
+      margin-top: 100px;
+      margin-bottom: 50px;
+      width: 100%;
+    }
+    div#no_pages{
+      width: 95%;
+      margin-top: 10px;
+    }
+    label#loglabel{
+      width: 100px;
+     }
+     input#loginput{
+      width: 40%;
+      font-size: 15px;
+     }
+    .bodyp{
+      width: 100%;
+    }
+    .topnav a {
+        float: none;
+        display: block;
+        text-align: left;
+        font-size: 20px;
+      }
+    .topnav .reg{
+        float:left;
+    }
+    
+   .indeximg{
+    height: 200px;
+   }
+   label{
+    text-align: left;
+   }
+   input{
+    font-size: 10px;
+    width: 40%;
+   }
+   .registerbtn{
+    width: 40%;
+   }
+   button.sub {
+    margin-top:20px;
+    font-size: 20px;
+    width: 50%;
+  }
+
+tr{
+    font-size: 12px;
+}
+div#calendar{
+    margin:0px auto;
+    padding:0px;
+    width: 95%;
+    font-family:Helvetica, "Times New Roman", Times, serif;
+    
+  }
+  div#calendar div.header{
+    line-height:30px;  
+    vertical-align:middle;
+    position:absolute;
+    left:11px;
+    top:0px;
+    width:90%;
+    height:40px;   
+    text-align:center;
+}
+div#calendar div.header span.title{
+  color:#FFF;
+  font-size:15px;
+}
+div#calendar div.header a.prev,div#calendar div.header a.next{ 
+  position:absolute;
+  top:0px;   
+  height: 10px;
+  display:block;
+  cursor:pointer;
+  text-decoration:none;
+  color:#FFF;
+}
+  div#calendar div.box{
+    position:relative;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:30px;
+    background-color:   #a68010 ;      
+}
+ 
+div#calendar ul.label{
+  float:left;
+  margin: 0px;
+  padding: 0px;
+  margin-top:5px;
+  margin-left: 7px;
+  width: 100%;
+}
+div#calendar ul.label li{
+  margin:0px;
+  padding:0px;
+   
+  float:left;
+  list-style-type:none;
+ 
+  width:14%;
+  height:40px;
+  line-height:40px;
+  vertical-align:middle;
+  text-align:center;
+  color:#000;
+  font-size: 15px;
+  background-color: transparent;
+}
+div#calendar ul.dates{
+  float:left;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+div#calendar ul.dates li{
+  margin:0px;
+  padding:0px;
+  margin-right:2.25%;
+  margin-top: 5px;
+  line-height:40px;
+  vertical-align:middle;
+  float:left;
+  list-style-type:none;
+  width:12%;
+  height:43px;
+  font-size:15px;
+  background-color: #DDD;
+  color:#000;
+  text-align:center; 
+}
+
+
+
+}

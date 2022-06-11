@@ -8,6 +8,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
 
 
 <div class="topnav" id="myTopnav">
+
     <a href="home.php"><i>Acasa</i></a>
 
     <?php
@@ -38,5 +39,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
 
         </i>
     </div>
-    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
+
+    <!-- <a href=" javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a> -->
 </div>

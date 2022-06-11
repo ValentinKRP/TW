@@ -16,10 +16,30 @@ if (isset($_GET) && isset($_GET['year'])) {
   $year = date('Y');
 }
 
-include "./models/header.php";
+
+
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <title>Service</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/calendar.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/responsive1.css">
+  <meta name="viewport" content="width=device-width" />
+
+
+
+  <script src="./JS/functii.js"></script>
+
+</head>
 
 <body style="background-color: white;">
 
@@ -51,11 +71,11 @@ include "./models/header.php";
         }
         ?>
       </select>
-      <p style="font-size:20px">Introduceti motivul programarii:</p>
+      <p id="motiv" style="font-size:20px">Introduceti motivul programarii:</p>
       <textarea id="cerere" name="cerere" maxlength="2000" rows="5" cols="60" required></textarea>
       <br>
       <br>
-      <label>Imagine: </label><input type="file" name="filename" id="filename">
+      <label>Imagine: </label><input id="loginput" type="file" name="filename" id="filename">
       <div id="iflogged">
         <?php
         if (isset($_SESSION['id'])) {

@@ -3,8 +3,11 @@
 <head>
 <title>Service</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/style_log.css">
+<link rel="stylesheet" href="css/responsive1.css">
+
 </head>
 <body onload="">
     <div class="topnav" id="myTopnav">
@@ -15,8 +18,8 @@
         <a href="program.php"><i>Program</i></a>
         <div class=reg>
            
-        <i id="logare"></i>
-    </div>
+         <i id="logare"></i>
+          </div>
       
         <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
       </div>
@@ -31,11 +34,11 @@
 <form method="post" action="login.php" id="logform">
     
   <div style="text-align:center" class="container">
-    <label style='display:inline-block; text-align: right; width:100px;' ><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <label id="loglabel" style='display:inline-block;' ><b>Email</b></label>
+    <input id="loginput" type="text" placeholder="Enter Email" name="email" required>
     <br> 
-    <label style='display:inline-block; text-align: right; width:100px;' ><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label id="loglabel" style='display:inline-block; ' ><b>Password</b></label>
+    <input id="loginput" type="password" placeholder="Enter Password" name="psw" required>
     <br> 
     <label>
         <input  type="checkbox" checked="checked" name="remember"> Remember me

@@ -20,7 +20,7 @@ div#calendar{
       position:absolute;
       left:11px;
       top:0px;
-      width:582px;
+      width:90%;
       height:40px;   
       text-align:center;
   }
@@ -51,6 +51,7 @@ div#calendar{
   div#calendar div.box-content{
     border:1px solid #f1e0e0 ;
     border-top:none;
+    width:100%;
 }
  
  

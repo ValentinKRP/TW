@@ -75,7 +75,7 @@ if (isset($_GET) && isset($_GET['year'])) {
       <textarea id="cerere" name="cerere" maxlength="2000" rows="5" cols="60" required></textarea>
       <br>
       <br>
-      <label>Imagine: </label><input id="loginput" type="file" name="filename" id="filename">
+      <label>Imagine: </label><input id="loginput" type="file" name="filename">
       <div id="iflogged">
         <?php
         if (isset($_SESSION['id'])) {

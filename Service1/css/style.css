@@ -215,6 +215,15 @@ img {
   vertical-align: middle;
   white-space: nowrap;
 }
+.panel_table {
+  border: 1px;
+  width:100%;
+   table-layout: fixed;
+   overflow-x:auto;
+}
 
+.panel_table td{
+align-items: center;
+}
 
 

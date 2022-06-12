@@ -25,6 +25,10 @@ include "./models/header.php";
     <div style="text-align:center">
         <button class="sub" onclick="location.href = 'logout.php';">Logout</button>
         <br>
+        <a href="control_panel.php">
+            <button class="sub">Control Panel</button>
+        </a>
+        <br>
         <a href="cereri_asteptare.php">
             <button class="sub">Vizualizari cereri in asteptare</button>
         </a>

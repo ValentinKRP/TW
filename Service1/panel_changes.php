@@ -18,40 +18,16 @@ if (isset($_POST['delete'])) {
 $id = $_POST["id"];
 
 
-// if (strcmp($mesaj, "In asteptare") !== 0) {
-//     $update1 = "UPDATE cereri SET Raspuns='$mesaj' WHERE ID='$id';";
-//     $query1 = mysqli_query($conn, $update1);
-
-//     $update2 = "UPDATE cereri SET StatusCerere='$chose' WHERE ID='$id';";
-//     $query1 = mysqli_query($conn, $update2);
-// } else {
-//     echo "<script>alert('Introduceti raspunsul');
-//             window.location.href='cereri_asteptare.php'</script>";
-// }
-
-
 if ($chose == 'delete') {
 
-    $slct = "DELETE FROM conturi WHERE id= '$id'";
-    $query = mysqli_query($conn, $slct);
-    $idMax = 0;
 
-    $select2 = "SELECT * FROM conturi";
-    $query2 = mysqli_query($conn, $select2);
-
-    if (mysqli_num_rows($query2) > 0) {
+    $select1  = "DELETE FROM cereri WHERE IdCont= '$id' ";
+    $query1 = mysqli_query($conn, $select1);
+    $select = "DELETE FROM conturi WHERE id= '$id' ";
+    $query = mysqli_query($conn, $select);
 
 
-        while ($row = mysqli_fetch_assoc($query2)) {
-            if ($row["ID"] > $idMax)
-                $idMax = $row["ID"];
-        }
-    }
 
-    $idMax = $idMax + 1;
-
-    // $insert2 = "INSERT INTO programari(ID,DataProgramarii,OraProgramarii,IdUser) VALUES ('$idMax','$dataProg','$oraProg','$idCont')";
-    // $query3 = mysqli_query($conn, $insert2);
 
     echo "<script>alert('Utilizatorul a fost sters!');
     window.location.href='control_panel.php'</script>";

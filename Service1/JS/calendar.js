@@ -28,7 +28,7 @@ function checkDates(month, year) {
     console.log(monthDates);
     for (const date in monthDates) {
       // MODIFIED TO 10
-      if (monthDates[date].length > 9) {
+      if (monthDates[date].length > 2) {
         document.getElementById("li-" + date).classList.add("calendar-full");
       }
     }
